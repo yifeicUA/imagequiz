@@ -13,7 +13,7 @@ import {
 }from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 //import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -36,6 +36,9 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Row>
+          <Col>This is the footer</Col>
+        </Row>
       </Container>
     </HashRouter>
   );
