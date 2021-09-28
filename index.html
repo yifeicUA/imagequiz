@@ -8,6 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+  <script
+  src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
+  crossorigin></script>
+  <script
+  src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
+  crossorigin></script>
+  <script>var Alert = ReactBootstrap.Alert;</script>
 </head>
 <body>
   <nav class="navbar navbar-expand-sm  bg-dark navbar-dark sticky-top">
@@ -17,20 +25,22 @@
           <img src="giftsearch-logo.svg" class="float-right" alt="logo" style="width: 50%; margin-left: 15px;">
         </a>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">LATEST PICKS</a></li>
-          <li><a href="#">GIFTS BY OCCASION</a></li>
-          <li><a href="#">TYPES OF GIFTS</a></li>
-          <li><a href="#">BLOG</a></li>
-          <li><a href="#">CONTACT US</a></li>
-          <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search...</button>
-          </form>
-        </ul>
-      </div>
+      <Row id="myNavbar">
+        <Col sm>sm=Home</Col>
+        <Col sm>sm=LATEST PICKS</Col>
+        <Col sm>sm=GIFTS BY OCCASION</Col>
+        <Col sm>sm=TYPES OF GIFTS</Col>
+        <Col sm>sm=BLOG</Col>
+        <Col sm>sm=CONTACT US</Col>
+      </Row>
+      <Row>
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search...</button>
+        </form>
+        <Button variant="primary">SignIn</Button>{' '}
+        <Button variant="Secondary">LogIn</Button>{' '}
+      </Row>
       <button type="button" class="btn btn-secondary navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-left: 10px;" >
         <img src="menu.svg" class="float-right" alt="logo" style="width:40px;">
       </button>
