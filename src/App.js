@@ -2,15 +2,54 @@
 import Home from './components/Home';
 import Signin from './components/Signin';
 import Login from './components/Login';
-import './App.css';
+import Menu from './components/Menu';
+//import React from 'react';
+import {
+  //BrowserRouter as router,
+  HashRouter,
+  Switch,
+  Route,
+  //Link
+}from "react-router-dom";
+import { Container, Row, Col } from 'react-bootstrap';
+//import './App.css';
 
 
 function App() {
   return (
-    <div className="App">
-      <Home></Home>
-    </div>
+    <HashRouter>
+      <Container>
+        <Row>
+          <Col>This is the header</Col>
+        </Row>
+        <Row>
+          <Col><Menu /></Col>
+        </Row>
+        <Switch>
+          <Route path="/sign">
+            <Signin />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Container>
+    </HashRouter>
   );
 }
 
+/*
+function Home(){
+  return <h2>Home</h2>
+}
+function Signin(){
+  return <h2>Signin</h2>
+}
+function Login(){
+  return <h2>Login</h2>
+}
+*/
 export default App;

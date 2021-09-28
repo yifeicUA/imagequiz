@@ -1,8 +1,8 @@
 //import App from "../App";
 
-const Signin = () => {
+const Menu = () => {
     return (
         <p>Hello from the sign in page</p>
     );
 }
-export default Signin;
+export default Menu;
