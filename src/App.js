@@ -20,9 +20,6 @@ function App() {
     <HashRouter>
       <Container>
         <Row>
-          <Col>This is the header</Col>
-        </Row>
-        <Row>
           <Col><Menu /></Col>
         </Row>
         <Switch>

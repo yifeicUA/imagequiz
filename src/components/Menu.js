@@ -2,7 +2,7 @@
 import { Container, Navbar } from 'react-bootstrap';
 const Menu = () => {
     return (
-        <><p>Hello from the sign in page</p><Navbar>
+        <Navbar bg="dark">
             <Container>
                 <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
                 <Navbar.Toggle />
@@ -12,7 +12,7 @@ const Menu = () => {
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>
-        </Navbar></>
+        </Navbar>
     );
 }
 export default Menu;
