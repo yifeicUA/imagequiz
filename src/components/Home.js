@@ -5,4 +5,4 @@ const Home = () => {
         <p>Hello from the home page</p>
     );
 }
-export default App;
+export default Home;
