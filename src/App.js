@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import Home from './components/Home';
-import Home from './components/Signin';
-import Home from './components/Login';
+import Signin from './components/Signin';
+import Login from './components/Login';
 import './App.css';
 
 
