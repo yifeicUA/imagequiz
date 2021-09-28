@@ -1,1 +1,133 @@
-#test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gift search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm  bg-dark navbar-dark sticky-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="giftsearch-logo.svg" class="float-right" alt="logo" style="width: 50%; margin-left: 15px;">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">LATEST PICKS</a></li>
+          <li><a href="#">GIFTS BY OCCASION</a></li>
+          <li><a href="#">TYPES OF GIFTS</a></li>
+          <li><a href="#">BLOG</a></li>
+          <li><a href="#">CONTACT US</a></li>
+          <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success" type="submit">Search...</button>
+          </form>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-secondary navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-left: 10px;" >
+        <img src="menu.svg" class="float-right" alt="logo" style="width:40px;">
+      </button>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <h1>WHO DO YOU WANT TO make happy?</h1>
+    <p>LATEST PICKS</p>
+    <!-- first row -->
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card" style="width:auto">
+          <img class="card-img-top img-thumbnail" src="img/sloth-loves-cat-t-shirt.jpg" alt="Card image" style="width:auto;">
+          <div class="card-body">
+            <h4 class="card-title">Sloth Loves Cat T-Shirt</h4>
+            <p class="card-text">Of course two of the cutest animals on the planet must like each other and you can show their love with this adorable T-shirt! Read more »</p>
+            <a href="#" class="btn btn-danger">$17.95</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="width:auto">
+          <img class="card-img-top img-thumbnail" src="img/men-s-traveler-dopkit.jpg" alt="Card image" style="width:auto;">
+          <div class="card-body">
+            <h4 class="card-title">Men's Traveler Dopp Kit</h4>
+            <p class="card-text">A compact high quality toiletry bag with handles and pockets, ready to be packed and thrown in the bag as you prepare to go on an adventure. Read more »</p>
+            <a href="#" class="btn btn-danger">$27.25</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="width:auto">
+          <img class="card-img-top img-thumbnail" src="img/narwhal-usb-foot-warmers.jpg" alt="Card image" style="width:auto;">
+          <div class="card-body">
+            <h4 class="card-title">Narwhal USB Foot Warmers</h4>
+            <p class="card-text">The unicorn of the sea, the narwhal probably can't keep a human away from hypothermia, but these narwhal slippers *will* keep your feet warm and toasty. Read more »</p>
+            <a href="#" class="btn btn-danger">$42.99</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- second row -->
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card" style="width:auto">
+          <img class="card-img-top img-thumbnail" src="img/predator-quadcopter-drone.jpg" alt="Card image" style="width:auto;">
+          <div class="card-body">
+            <h4 class="card-title">Predator Quadcopter Drone</h4>
+            <p class="card-text">A tiny yet powerful and durable drone with bright lights and excellent response to controls, this Predator quadcopter drone will be a lot of fun! Read more »</p>
+            <a href="#" class="btn btn-danger">$39.99</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="width:auto">
+          <img class="card-img-top img-thumbnail" src="img/smart-led-light-bulb-smartphone-controlled.jpg" alt="Card image" style="width:auto;">
+          <div class="card-body">
+            <h4 class="card-title">Smart LED Light Bulb - Smartphone Controlled</h4>
+            <p class="card-text">The best colorful lights are ones that you can change and control at will and from a distance! You can change the color of this Smart LED light bulb from your s Read more »</p>
+            <a href="#" class="btn btn-danger">$30.95</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="width:auto">
+          <img class="card-img-top img-thumbnail" src="img/cobblestone-pathway-glossy-mural-36x80in.jpg" alt="Card image" style="width:auto;">
+          <div class="card-body">
+            <h4 class="card-title">Cobblestone Pathway Glossy Mural 36x80in</h4>
+            <p class="card-text">A gorgeous mural for a wall or a door that shows an Edinburgh cobblestone pathway, perfect to make you think of going on adventures! Read more »</p>
+            <a href="#" class="btn btn-danger">$39.95</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <style type="text/css">
+    *{margin:0px; padding:0px; }
+    #myNavbar{
+        width:auto;
+    }
+    .navbar-nav > li{
+      padding:10px;
+    }
+    .navbar-nav > form{
+      padding:10px;
+    }
+    .navbar-nav > li > a{
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #7b7b7c;
+    letter-spacing: .8px;
+    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+
+</body>
+</html>
