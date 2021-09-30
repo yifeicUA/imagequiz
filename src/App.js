@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import Home from './components/Home';
-import Signin from './components/Signin';
+import Signin from './components/Signup';
 import Login from './components/Login';
 import Menu from './components/Menu';
 //import React from 'react';
@@ -33,14 +33,11 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        <Row>
-          <Col>This is the footer</Col>
-        </Row>
+
       </Container>
     </HashRouter>
   );
 }
-
 /*
 function Home(){
   return <h2>Home</h2>

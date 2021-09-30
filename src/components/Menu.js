@@ -1,15 +1,20 @@
 //import App from "../App";
-import { Container, Navbar } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 const Menu = () => {
     return (
-        <Navbar bg="dark">
+        <Navbar variant="pills" defaultActiveKey="/" bg="dark">
             <Container>
-                <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+                <Nav.Item>
+                    <Nav.Link href="/">Home</Nav.Link>
+                </Nav.Item>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                    <Navbar.Text>
-                        Signed in as: <a href="#login">Yifei Chen</a>
-                    </Navbar.Text>
+                    <Nav.Item>
+                        <Nav.Link href="#login">Login</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="#sign">Signup</Nav.Link>
+                    </Nav.Item>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
