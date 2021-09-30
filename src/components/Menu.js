@@ -5,7 +5,7 @@ const Menu = () => {
         <Navbar variant="pills" defaultActiveKey="/" bg="dark">
             <Container>
                 <Nav.Item>
-                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="#/">Home</Nav.Link>
                 </Nav.Item>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
