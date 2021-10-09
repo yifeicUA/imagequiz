@@ -3,6 +3,8 @@ import Home from './components/Home';
 import Signin from './components/Signup';
 import Login from './components/Login';
 import Menu from './components/Menu';
+import Questions from './components/question';
+import { useState } from 'react';
 //import React from 'react';
 import {
   //BrowserRouter as router,
@@ -16,6 +18,14 @@ import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const {number, setNumber} = useState(undefined);
+  let index = 0;
+
+  let getnumIndex = (picIndex) => {
+    setNumber(picIndex);
+    
+  }
+  alert(number);
   return (
     <HashRouter>
       <Container>
@@ -29,8 +39,11 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/question">
+            <Questions indexProp={number} />
+          </Route>
           <Route path="/">
-            <Home />
+            <Home getIndex={getnumIndex} />
           </Route>
         </Switch>
 

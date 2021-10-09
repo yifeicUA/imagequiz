@@ -1,11 +1,23 @@
 //import App from "../App";
-import { Container, Row, Col, CardGroup, Card} from "react-bootstrap";
-import flowers from './data.js';
-const Home = () => {
+import { Container, Row, Col, CardGroup, Card, Alert} from "react-bootstrap";
+import flowers from './flowers.js';
+import { useState } from "react";
+import { useHistory } from "react-router";
+const Home = (props) => {
+    const {index, setNumber} = useState(0);
+    const history = useHistory();
+    let send =(event) =>{
+        event.preventDefault();
+        //alert(event.target.name);
+        props.getIndex(event.target.name);
+        history.push('/question')
+    }
     let curr = [];
     for(var i=0; i<flowers.length; i++){
-        curr.push(<Card>
-            <Card.Img variant="top" src={flowers[i].picture} />
+        curr.push(<Card >
+            <Card.Link href = "#question"  value={i} onClick={send}>
+            <Card.Img variant="top"  src={flowers[i].picture} name={i} onClick={send}/>
+            </Card.Link>
             <Card.Body>
                 <Card.Title>{flowers[i].name}</Card.Title>
             </Card.Body>
