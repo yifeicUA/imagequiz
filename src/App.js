@@ -13,19 +13,25 @@ import {
   Route,
   //Link
 }from "react-router-dom";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 //import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const {number, setNumber} = useState(undefined);
+  const [number, setNumber] = useState(undefined);
+  const [grade, setGrade] = useState(0);
   let index = 0;
 
   let getnumIndex = (picIndex) => {
     setNumber(picIndex);
     
   }
-  alert(number);
+  let updateGrade = (Grade) => {
+    setGrade(grade+Grade);
+    //alert(grade);
+    
+  }
+  //alert(number);
   return (
     <HashRouter>
       <Container>
@@ -40,7 +46,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/question">
-            <Questions indexProp={number} />
+            <Questions indexProp={number} getGrade={updateGrade} gradeProp = {grade}/>
           </Route>
           <Route path="/">
             <Home getIndex={getnumIndex} />
