@@ -13,10 +13,10 @@ const Signin = () => {
                 </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
-                <Form.Label>Phone</Form.Label>
+                <Form.Label>User name</Form.Label>
                 <Form.Control type="text" placeholder="Enter phone number" />
                 <Form.Text className="text-muted">
-                    please enter your phone number
+                    please enter your username
                 </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
