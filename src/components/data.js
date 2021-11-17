@@ -1,4 +1,6 @@
-import flowers from './flowers';
+//import flowers from './flowers';
+import api from "../communication/api";
+const flowers = api.getFlowers().then(x => (x.rows)).catch((e) => console.log(e));
 
 let generateQuestions = () => {
     let questions = [];

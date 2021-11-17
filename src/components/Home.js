@@ -22,8 +22,8 @@ const Home = (props) => {
     let curr = [];
     for(var i=0; i<flowers.length; i++){
         curr.push(<Card >
-            <Card.Link href = "#question"  value={i} onClick={send}>
-            <Card.Img variant="top"  src={flowers[i].picture} name={i} onClick={send}/>
+            <Card.Link href = "#question"  value={flowers[i].name} onClick={send}>
+            <Card.Img variant="top"  src={flowers[i].picture} name={flowers[i].name} onClick={send}/>
             </Card.Link>
             <Card.Body>
                 <Card.Title>{flowers[i].name}</Card.Title>
