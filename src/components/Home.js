@@ -1,9 +1,16 @@
 //import App from "../App";
 import { Container, Row, Col, CardGroup, Card, Alert} from "react-bootstrap";
-import flowers from './flowers.js';
-import { useState } from "react";
+//import flowers from './flowers.js';
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import api from "../communication/api";
 const Home = (props) => {
+    const [flowers, setFlowers] = useState([]);
+    useEffect(() => {
+        if(flowers.length > 0)return;
+        api.getFlowers().then(x => setFlowers(x)).catch((e) => console.log(e));
+    },[]
+    );
     const {index, setNumber} = useState(0);
     const history = useHistory();
     let send =(event) =>{
