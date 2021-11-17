@@ -8,7 +8,7 @@ import api from "../communication/api";
 //import grade from './grade.js';
 import { Alert, Card, Button, Form} from 'react-bootstrap';
 import { Container, Row, Col, CardGroup, Image} from "react-bootstrap";
-//import { useHistory, useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 const Questions = (props) => {
   //console.log(props.indexProp);
   const [quiz, setQuiz] = useState([]);
@@ -17,7 +17,7 @@ const Questions = (props) => {
     api.getQuiz(props.indexProp).then(x => setQuiz(x));
   },[]);
   const {grade, setGrade} = useState(0);
-  //const history = useHistory();
+  const history = useHistory();
   //alert(props.indexProp);
   //alert(props.gradeProp);
   let send = (event) => {
@@ -72,7 +72,7 @@ const Questions = (props) => {
     curr.push(<Row><Alert key={"info"}>
       Your grade is {props.gradeProp} 
     </Alert></Row>);
-    curr.push(<Row><Button onClick={props.gradeProp = 0} variant="primary" size="lg">
+    curr.push(<Row><Button variant="primary" size="lg">
     Reapet same quiz
   </Button>{' '}
   <Button href="#" variant="secondary" size="lg">

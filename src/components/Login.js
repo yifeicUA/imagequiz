@@ -15,7 +15,7 @@ const Login = () => {
           e.preventDefault();
           console.log(email);
           console.log(password);
-          api.getUser(email,password).then(x => {console.log(x); setSucced("       Login successfully！！！(check console, there is a problem on isvalid)");});
+          api.getUser(email,password).then(x => {console.log(x.json()); setSucced("       Login successfully！！！(check console, there is a problem on isvalid)");});
     }
     return (
         <><Form onSubmit={onFormSubmit}>
