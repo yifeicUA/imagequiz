@@ -22,9 +22,31 @@ let getQuiz = (name) =>{
     )
 }
 
+let setUser = (name, email, password) =>{
+    return fetch(`${baseURL}/register`,{
+        method: "POST",
+        body: JSON.stringify({name,email,password}),
+        headers:{
+            "Content-Type": "application/json",
+        },
+    });
+}
+let getUser = (email, password) =>{
+    return fetch(`${baseURL}/login`,{
+        method: "POST",
+        body: JSON.stringify({email,password}),
+        headers:{
+            "Content-Type": "application/json",
+        },
+    });
+}
+
+
 let api = {
     getFlowers: getFlowers,
-    getQuiz: getQuiz
+    getQuiz: getQuiz,
+    setUser: setUser,
+    getUser: getUser
 }
 
 export default api;

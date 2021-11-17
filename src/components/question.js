@@ -72,10 +72,10 @@ const Questions = (props) => {
     curr.push(<Row><Alert key={"info"}>
       Your grade is {props.gradeProp} 
     </Alert></Row>);
-    curr.push(<Row><Button href="/question" variant="primary" size="lg">
+    curr.push(<Row><Button onClick={props.gradeProp = 0} variant="primary" size="lg">
     Reapet same quiz
   </Button>{' '}
-  <Button href="/" variant="secondary" size="lg">
+  <Button href="#" variant="secondary" size="lg">
     Go Back to do Others
   </Button>{' '}</Row>);
     return (
