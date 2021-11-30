@@ -11,6 +11,7 @@ import {
   HashRouter,
   Switch,
   Route,
+  Redirect
   //Link
 }from "react-router-dom";
 import { Container, Row, Col, Alert } from 'react-bootstrap';
@@ -68,4 +69,24 @@ function Login(){
   return <h2>Login</h2>
 }
 */
+let PrivateRoute = ({ children, ...rest }) => {
+  let customer = localStorage.getItem('customer');
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        customer ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location }
+            }}
+          />
+        )
+      }
+    />
+  );
+}
 export default App;
