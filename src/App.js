@@ -46,9 +46,9 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/question">
+          <PrivateRoute path="/question">
             <Questions indexProp={number} getGrade={updateGrade} gradeProp = {grade}/>
-          </Route>
+          </PrivateRoute>
           <Route path="/">
             <Home getIndex={getnumIndex} />
           </Route>
