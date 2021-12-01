@@ -21,6 +21,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [number, setNumber] = useState(undefined);
   const [grade, setGrade] = useState(0);
+  localStorage.setItem("customer",undefined);  
   let index = 0;
 
   let getnumIndex = (picIndex) => {
@@ -71,11 +72,17 @@ function Login(){
 */
 let PrivateRoute = ({ children, ...rest }) => {
   let customer = localStorage.getItem('customer');
+  console.log(customer=="undefined");
+  /*
+  if(customer=="undefined"){
+    window.location.replace("/login")
+  }
+  */
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        customer ? (
+        customer!="undefined" ? (
           children
         ) : (
           <Redirect

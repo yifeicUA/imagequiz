@@ -14,7 +14,17 @@ const Questions = (props) => {
   const [quiz, setQuiz] = useState([]);
   useEffect(() => {
     console.log(props.indexProp);
-    api.getQuiz(props.indexProp).then(x => setQuiz(x));
+    api.getQuiz(props.indexProp)
+    .then(x => {
+      console.log(x);
+      if(x!=undefined){
+        return setQuiz(x)
+      }
+      else{
+        console.log("ceshicuowu");
+        //window.location.replace("/login")
+      }
+      });
   },[]);
   const {grade, setGrade} = useState(0);
   const history = useHistory();

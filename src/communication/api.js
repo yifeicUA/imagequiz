@@ -11,6 +11,13 @@ let getFlowers = () => {
 let getQuiz = (name) =>{
     return fetch(`${baseURL}/quiz/${name}`)
     .then((x) => x.json())
+    /*
+    .then(x => {
+        if (x.status == 401) {
+            window.location.replace("/login");
+        } 
+    })
+    */
     .then((x)=> x.map((y) => {
         return{
             picture: y.picture,
@@ -20,6 +27,7 @@ let getQuiz = (name) =>{
     })
     
     )
+    
 }
 
 let setUser = (name, email, password) =>{
