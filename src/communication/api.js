@@ -29,7 +29,7 @@ let getQuiz = (name) =>{
     )
     
 }
-
+/*
 let setUser = (name, email, password) =>{
     return fetch(`${baseURL}/register`,{
         method: "POST",
@@ -48,9 +48,32 @@ let getUser = (email, password) =>{
         },
     });
 }
+*/
+  let setUser = (name, email, password) => {
+    return fetch(`${baseURL}/register`, {
+        method: 'POST',
+        withCredentials: true,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name, email, password})
+    }).then(x => x.json());
+};
 
-let verifyTwitter = (username) => {
-    return fetch(`${baseURL}/twitter/verify/${username}`, {
+let getUser = (email, password) => {
+    return fetch(`${baseURL}/login`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true
+        },
+        body: JSON.stringify({email, password})
+    }).then(x => x.json());
+}
+let logout = () => {
+    return fetch(`${baseURL}/logout`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -60,15 +83,28 @@ let verifyTwitter = (username) => {
         }
       })
     .then(x => x.json());
-  }
+}
 
+let verifyTwitter = (username) => {
+  return fetch(`${baseURL}/twitter/verify/${username}`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true
+      }
+    })
+  .then(x => x.json());
+}
 
 let api = {
     getFlowers: getFlowers,
     getQuiz: getQuiz,
     setUser: setUser,
     getUser: getUser,
-    verifyTwitter: verifyTwitter
+    verifyTwitter: verifyTwitter,
+    logout:logout
 }
 
 export default api;

@@ -57,7 +57,7 @@ function App() {
             <Signin />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login onAuthenticated={onCustomerAuthenticated} />
           </Route>
           <PrivateRoute path="/question">
             <Questions indexProp={number} getGrade={updateGrade} gradeProp = {grade}/>

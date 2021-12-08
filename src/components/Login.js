@@ -16,12 +16,14 @@ const Login = () => {
           console.log(email);
           console.log(password);
           api.getUser(email,password)
-          .then(x => x.json())
+          //.then(x => x.json())
           .then(x => {
               console.log(x); 
               if(x.done==true){
                 localStorage.setItem("customer",email);  
-                setSucced("       Login successfully！！！(check console)");}
+                setSucced("       Login successfully！！！(check console)");
+                props.onAuthenticated();
+                history.push({ pathname: '/' });}
               else{setSucced("       Login faild(check console)");}});
     }
     return (
