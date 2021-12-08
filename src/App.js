@@ -19,7 +19,7 @@ import {
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 //import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import api from "../communication/api";
+import api from "./communication/api";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
