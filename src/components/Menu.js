@@ -13,7 +13,7 @@ const Menu = () => {
                         <Nav.Link href="#login">Login</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="http://localhost:5000/login/twitter">Sign In with Twitter</Nav.Link>
+                        <Nav.Link href="https://yifeicua-imagequiz-backend.herokuapp.com/login/twitter">Sign In with Twitter</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link href="#sign">Signup</Nav.Link>
