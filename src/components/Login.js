@@ -4,10 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Alert,Card, Button, Form, Row} from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import api from '../communication/api';
-const Login = () => {
+import { useHistory } from 'react-router-dom';
+const Login = (props) => {
     let [succed, setSucced] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const history = useHistory();
     //const emailInput = ({target:{email}}) => setEmail(email);
     //const nameInput = ({target:{name}}) => setName(name);
     //const passwordInput = ({target:{password}}) => setPassword(password);
