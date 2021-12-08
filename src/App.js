@@ -4,7 +4,7 @@ import Signin from './components/Signup';
 import Login from './components/Login';
 import Menu from './components/Menu';
 import Questions from './components/question';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //import React from 'react';
 import {
   //BrowserRouter as router,
@@ -19,7 +19,7 @@ import {
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 //import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import api from "../communication/api";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 

@@ -49,12 +49,26 @@ let getUser = (email, password) =>{
     });
 }
 
+let verifyTwitter = (username) => {
+    return fetch(`${baseURL}/twitter/verify/${username}`, {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true
+        }
+      })
+    .then(x => x.json());
+  }
+
 
 let api = {
     getFlowers: getFlowers,
     getQuiz: getQuiz,
     setUser: setUser,
-    getUser: getUser
+    getUser: getUser,
+    verifyTwitter: verifyTwitter
 }
 
 export default api;
