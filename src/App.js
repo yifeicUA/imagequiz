@@ -11,7 +11,9 @@ import {
   HashRouter,
   Switch,
   Route,
-  Redirect
+  Redirect,
+  useParams,
+  useHistory
   //Link
 }from "react-router-dom";
 import { Container, Row, Col, Alert } from 'react-bootstrap';
@@ -19,6 +21,13 @@ import { Container, Row, Col, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  let onCustomerAuthenticated = () => {
+    setIsAuthenticated(true);
+  }
+
+
   const [number, setNumber] = useState(undefined);
   const [grade, setGrade] = useState(0);
   localStorage.setItem("customer",undefined);  
@@ -38,9 +47,12 @@ function App() {
     <HashRouter>
       <Container>
         <Row>
-          <Col><Menu /></Col>
+          <Col><Menu customerAuthenticated={isAuthenticated} /></Col>
         </Row>
         <Switch>
+          <Route exact path='/twitter/:username/:name'>
+            <Twitter onAuthenticated={onCustomerAuthenticated}/>
+          </Route>
           <Route path="/sign">
             <Signin />
           </Route>
@@ -96,4 +108,27 @@ let PrivateRoute = ({ children, ...rest }) => {
     />
   );
 }
+
+let Twitter = (props) => {
+  let { username, name } = useParams();
+  let history = useHistory();
+  
+  useEffect(() => {
+    console.log('in Twitter ...');
+    api.verifyTwitter(username)
+      .then(x => {
+        console.log(x);
+        if (x.done) {
+          localStorage.setItem('customer', name);
+          props.onAuthenticated();
+        }
+      });
+  });
+  
+  
+  
+    return (
+      <Home />
+    );
+  }
 export default App;
